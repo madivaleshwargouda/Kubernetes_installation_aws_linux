@@ -1,0 +1,35 @@
+kubectl apply -f busybox.ymal 
+kubectl apply -f nginxpod.ymal
+kubectl get po nginx -o wide
+kubectl exec -it busybox -- wget -o- 192.168.40.243
+kubectl get svc
+kubectl get pods -o wide
+
+kubectl exec -it nginx -- bin/sh
+ls
+exit
+
+kubectl get po --show-labels
+
+kubectl apply -f nginxpod.ymal
+kubectl get pods -A
+kubectl get pods
+kubectl get rs
+
+kubectl get po nginx -o yaml
+kubectl delete po nginx            
+kubectl delete -f nginx-pod.yaml  
+kubectl delete po nginx --grace-period=0 --force
+
+kubectl cluster-info
+kubectl explain replicaset
+kubectl create -f replicaset.yaml ---config
+kubectl get rs
+kubectl describe rs/
+kubectl get pods -o wide
+kubectl delete pods --all
+
+
+
+
+https://medium.com/bb-tutorials-and-thoughts/practice-enough-with-these-questions-for-the-ckad-exam-2f42d1228552
